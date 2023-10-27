@@ -1,13 +1,10 @@
-import { StyleConstants } from './StyleConstants';
 import fontIconEOT from 'assets/fonts/font-icon.eot';
 import fontIconTTF from 'assets/fonts/font-icon.ttf';
 import fontIconWOFF from 'assets/fonts/font-icon.woff';
-
+import { StyleConstants } from './StyleConstants';
 import { media } from './Media'
 
 export const GlobalStyle = createGlobalStyle`
-  @charset "UTF-8";
-
   @font-face {
     font-family: 'font-icons';
     font-weight: normal;
@@ -22,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    height: 100%;
     width: 100%;
     line-height: 1.5;
   }
