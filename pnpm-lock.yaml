@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  lodash-es:
+    specifier: ^4.17.21
+    version: 4.17.21
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -17,6 +20,9 @@ dependencies:
   styled-components:
     specifier: ^6.1.0
     version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+  styled-components-spacing:
+    specifier: ^3.1.1
+    version: 3.1.1(styled-components@6.1.0)
 
 devDependencies:
   '@types/react':
@@ -43,6 +49,9 @@ devDependencies:
   eslint-plugin-react-refresh:
     specifier: ^0.4.3
     version: 0.4.3(eslint@8.52.0)
+  prettier:
+    specifier: ^3.0.3
+    version: 3.0.3
   typescript:
     specifier: ^5.0.2
     version: 5.2.2
@@ -1519,6 +1528,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
@@ -1703,6 +1716,12 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
@@ -1860,6 +1879,23 @@ packages:
     dependencies:
       acorn: 8.11.1
     dev: true
+
+  /styled-components-breakpoint@2.1.1(styled-components@6.1.0):
+    resolution: {integrity: sha512-PkS7p3MkPJx/v930Q3MPJU8llfFJTxk8o009jl0p+OUFmVb2AlHmVclX1MBHSXk8sZYGoVTTVIPDuZCELi7QIg==}
+    peerDependencies:
+      styled-components: '>= 1'
+    dependencies:
+      styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /styled-components-spacing@3.1.1(styled-components@6.1.0):
+    resolution: {integrity: sha512-KaWsmaaa3JTXdtj1Nc4eZzv6gxz8lVlBbJ1WWf2nXqcy7GVJKRYfbDwQ3iZWj0qxQqp3Rbqpjk5bmj5moWCz3A==}
+    peerDependencies:
+      styled-components: '>= 1 < 4'
+    dependencies:
+      styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+      styled-components-breakpoint: 2.1.1(styled-components@6.1.0)
+    dev: false
 
   /styled-components@6.1.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-VWNfYYBuXzuLS/QYEeoPgMErP26WL+dX9//rEh80B2mmlS1yRxRxuL5eax4m6ybYEUoHWlTy2XOU32767mlMkg==}

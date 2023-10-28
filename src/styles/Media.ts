@@ -8,11 +8,15 @@
 
 // Update your breakpoints if you want
 export const sizes = {
-  small: 600,
-  medium: 1024,
-  large: 1440,
-  xlarge: 1920,
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200
 };
+
+
+// console.log(theme.breakpoints)
 
 // Iterate through the sizes and create min-width media queries
 export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
@@ -27,7 +31,7 @@ export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
 const SomeDiv = styled.div`
   display: flex;
   ....
-  ${media.medium} {
+  ${media.md} {
     display: block
   }
 `;
