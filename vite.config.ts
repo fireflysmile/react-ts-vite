@@ -27,6 +27,11 @@ export default defineConfig(({ mode }): UserConfig => {
         components: path.resolve(__dirname, 'src/components'),
         styles: path.resolve(__dirname, 'src/styles'),
         pages: path.resolve(__dirname, 'src/pages'),
+        hooks: path.resolve(__dirname, 'src/hooks'),
+        config: path.resolve(__dirname, 'src/config'),
+        enums: path.resolve(__dirname, 'src/enums'),
+        i18n: path.resolve(__dirname, 'i18n'),
+        utils: path.resolve(__dirname, 'src/utils'),
       },
       extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     },
@@ -42,9 +47,12 @@ export default defineConfig(({ mode }): UserConfig => {
             react: ['cloneElement', 'createContext', 'StrictMode', 'Suspense'],
           },
           {
+            from: 'react-dom/client',
+            imports: [['createRoot']]
+          },
+          {
             from: 'react',
             imports: [
-              'createRoot',
               'FunctionComponent',
               'ReactNode',
               'ReactElement',
@@ -83,6 +91,7 @@ export default defineConfig(({ mode }): UserConfig => {
               'keyframes',
               'createGlobalStyle',
               'ThemeProvider',
+              'StyleSheetManager',
               ['default', 'styled'],
             ],
           },
@@ -106,8 +115,42 @@ export default defineConfig(({ mode }): UserConfig => {
             imports: ['DefaultTheme'],
             type: true,
           },
+          {
+            axios: [['default', 'axios']],
+          },
+          {
+            'react-i18next': [
+              'useTranslation',
+              'initReactI18next',
+              'Trans',
+              'Translation',
+            ],
+          },
+          {
+            i18next: [['changeLanguage', 'updateLocale'], ['default', 'i18nInstance'], ['use', 'useI18n']],
+          },
+          {
+            zustand: ['create'],
+          },
+          {
+            from: 'zustand',
+            imports: ['StoreApi', 'UseBoundStore', 'StateCreator'],
+            type: true,
+          },
+          {
+            from: 'axios',
+            imports: [
+              'AxiosInstance',
+              'AxiosResponse',
+              'AxiosError',
+              'InternalAxiosRequestConfig',
+              'AxiosRequestConfig',
+              'AxiosPromise',
+            ],
+            type: true,
+          },
         ],
-        dirs: ['src/shared'],
+        dirs: ['src/shared', 'src/api'],
         dts: './src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,

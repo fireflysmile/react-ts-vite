@@ -4,7 +4,6 @@ interface fontIconProps {
   content: string;
   color: keyof DefaultTheme['colors'];
   $cursorPointer?: boolean;
-  onClick: () => null
 }
 
 export default styled.span<fontIconProps>`

@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "react-hooks/rules-of-hooks": [0, { "allow": ["useSocket", "useStorage", "useCookie", "useHttpRequest"] }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-interface": "off",
   },
 }
