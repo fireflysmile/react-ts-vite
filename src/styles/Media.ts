@@ -27,7 +27,7 @@ export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
   {} as { [key in keyof typeof sizes]: () => string },
 );
 
-/* Example
+/* Use
 const SomeDiv = styled.div`
   display: flex;
   ....
