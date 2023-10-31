@@ -16,15 +16,27 @@ const Lab1: FunctionComponent = () => {
     }
 
     const formData = {
-        email: 'cuongnv1006@gmail.com',
+        email: 'cuongvan777@gmail.com',
         password: '123456789'
     }
 
     const signIn = useAuthStore.use.signIn()
+    const signUp = useAuthStore.use.signUp()
 
     const updateStore = async () => {
         try {
             await signIn({email: formData.email, password: formData.password});
+        } catch (err) {
+            console.log(err)
+        // eslint-disable-next-line no-empty
+        } finally {
+
+        }
+    }
+
+    const register = async () => {
+        try {
+            await signUp({email: formData.email, password: formData.password});
         } catch (err) {
             console.log(err)
         // eslint-disable-next-line no-empty
@@ -65,6 +77,7 @@ const Lab1: FunctionComponent = () => {
                 <img src={avatar.preview} alt="" width="80%" />
             )}
             <button onClick={handleCounter}>Click</button>
+            <button onClick={register}>register</button>
             <button onClick={updateStore}>login</button>
         </>
     )

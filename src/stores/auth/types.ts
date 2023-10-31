@@ -4,6 +4,7 @@ export type State = {
 };
 
 export type Actions = {
+  signUp: (credentials: Auth.UserCertificate) => Promise<void>;
   signIn: (credentials: Auth.UserCertificate) => Promise<void>;
   signOut: () => Promise<void>;
 };

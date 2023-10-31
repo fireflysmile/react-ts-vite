@@ -44,6 +44,7 @@ declare global {
   const px: typeof import('styled-components-spacing')['px']
   const resetAllStores: typeof import('../shared/utils')['resetAllStores']
   const signIn: typeof import('../api/auth')['signIn']
+  const signUp: typeof import('../api/auth')['signUp']
   const startTransition: typeof import('react')['startTransition']
   const styled: typeof import('styled-components')['default']
   const translate: typeof import('../shared/utils')['translate']

@@ -1,6 +1,11 @@
 import type { SetState, Actions, State } from './types';
 
 const createAction = (set: SetState<State>): Actions => ({
+  signUp: async (credentials: Auth.UserCertificate) => {
+    const response = await signUp(credentials);
+    console.log(response)
+  },
+
   signIn: async (credentials: Auth.UserCertificate) => {
     const { setUserInfo, setAccessToken } = useCookies();
     const response = await signIn(credentials);
@@ -10,6 +15,7 @@ const createAction = (set: SetState<State>): Actions => ({
     setAccessToken(accessToken);
     setUserInfo(user);
   },
+  
   signOut: async () => {
     //await logOut();
     const { revokeUser } = useCookies();
