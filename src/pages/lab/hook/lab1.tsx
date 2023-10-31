@@ -1,9 +1,9 @@
-import useAuthStore from "src/stores/auth"
+import { guestZone } from "src/components/Zone"
+import useAuthStore from "stores/auth"
 
 const Lab1: FunctionComponent = () => {
     const [counter, setCounter] = useState(1)
-    const [ava, setAva] = useState([])
-
+    const [avatar, setAvatar] = useState<App.Avatar>()
 
     const [users, setUsers] = useState([])
 
@@ -17,7 +17,7 @@ const Lab1: FunctionComponent = () => {
 
     const formData = {
         email: 'cuongnv1006@gmail.com',
-        password: '12345678'
+        password: '123456789'
     }
 
     const signIn = useAuthStore.use.signIn()
@@ -41,19 +41,14 @@ const Lab1: FunctionComponent = () => {
 
     useEffect(() => {
         return () => {
-            ava && URL.revokeObjectURL(ava.preview)
+            avatar && URL.revokeObjectURL(avatar.preview)
         }
-    }, [ava])
+    }, [avatar])
 
     const selectFile = e => {
         const file = e.target.files[0]
-
-
         file.preview = URL.createObjectURL(file)
-
-        setAva(file)
-
-        console.log(file)
+        setAvatar(file)
     }
 
     return (
@@ -66,13 +61,13 @@ const Lab1: FunctionComponent = () => {
                 ))}
             </ul>
             <input type="file" onChange={selectFile} />
-            {ava && (
-                <img src={ava.preview} alt="" width="80%" />
+            {avatar && (
+                <img src={avatar.preview} alt="" width="80%" />
             )}
             <button onClick={handleCounter}>Click</button>
-            <button onClick={updateStore}>Update</button>
+            <button onClick={updateStore}>login</button>
         </>
     )
 }
 
-export default Lab1;
+export default guestZone()(Lab1);

@@ -141,4 +141,8 @@ declare namespace App {
     scrollWidth: number;
     top: number;
   };
+
+  type Avatar = {
+    preview: string;
+  };
 }

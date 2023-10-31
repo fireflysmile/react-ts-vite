@@ -32,6 +32,7 @@ export default defineConfig(({ mode }): UserConfig => {
         enums: path.resolve(__dirname, 'src/enums'),
         i18n: path.resolve(__dirname, 'i18n'),
         utils: path.resolve(__dirname, 'src/utils'),
+        stores: path.resolve(__dirname, 'src/stores'),
       },
       extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     },
@@ -150,7 +151,7 @@ export default defineConfig(({ mode }): UserConfig => {
             type: true,
           },
         ],
-        dirs: ['src/shared', 'src/api'],
+        dirs: ['src/shared', 'src/api', 'src/hooks'],
         dts: './src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,

@@ -97,6 +97,7 @@
     "StateCreator": true,
     "StoreApi": true,
     "UseBoundStore": true,
-    "create": true
+    "create": true,
+    "useIsLoggedIn": true
   }
 }

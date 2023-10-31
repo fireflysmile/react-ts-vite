@@ -83,6 +83,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
     background: ${({ theme }) => theme.background.ebb};
+    margin: 0 auto;
 
 
     ${media.lg} {

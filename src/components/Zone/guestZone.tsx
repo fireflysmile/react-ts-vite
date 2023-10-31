@@ -1,4 +1,4 @@
-import useIsLoggedIn from 'hooks/use-is-logged-in';
+//import useIsLoggedIn from 'hooks/use-is-logged-in';
 
 export default () =>
   (WrappedComponent: ComponentType<App.LayoutComponent<ReactNode>>) =>
@@ -9,7 +9,7 @@ export default () =>
 
     useEffect(() => {
       if (isLoggedIn || isAuthenticated()) {
-        navigate('/');
+        navigate('/lab2');
       }
     }, [isLoggedIn]);
 

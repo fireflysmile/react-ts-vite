@@ -1,12 +1,13 @@
 import { GlobalStyle } from '../styles/GlobalStyles'
 import theme from '../styles/Theme'
-import './App.css'
 
 import router from './AppRouter';
+import { FunctionComponent } from 'react';
 
-function App() {
+const App: FunctionComponent = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <StyleSheetManager shouldForwardProp={(name) => !name.startsWith('$')}>
+      <ThemeProvider theme={theme}>
         <Padding all={{ sm: 1, lg: 2 }}>
           <Margin top={5}>
             <h1>Vite + React</h1>
@@ -15,7 +16,8 @@ function App() {
           <RouterProvider router={createBrowserRouter(router)} />
           <GlobalStyle />
         </Padding>
-    </ThemeProvider>
+      </ThemeProvider>
+    </StyleSheetManager>
   )
 }
 

@@ -1,5 +1,5 @@
 export const logOut = (): Promise<void> =>
-  useHttpRequest({ url: '/auth/logout', method: 'DELETE' });
+  useHttpRequest({ url: '/logout', method: 'DELETE' });
 
 export const signIn = (
   data: Auth.UserCertificate,

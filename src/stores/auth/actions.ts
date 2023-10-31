@@ -5,13 +5,13 @@ const createAction = (set: SetState<State>): Actions => ({
     const { setUserInfo, setAccessToken } = useCookies();
     const response = await signIn(credentials);
     const { accessToken, user } = response;
-    console.log(accessToken)
+    
     set(() => ({ accessToken, userInfo: user }));
     setAccessToken(accessToken);
     setUserInfo(user);
   },
   signOut: async () => {
-    await logOut();
+    //await logOut();
     const { revokeUser } = useCookies();
     revokeUser();
     set(() => ({ accessToken: null, userInfo: null }));
