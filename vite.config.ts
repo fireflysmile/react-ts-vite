@@ -151,7 +151,7 @@ export default defineConfig(({ mode }): UserConfig => {
             type: true,
           },
         ],
-        dirs: ['src/shared', 'src/api', 'src/hooks'],
+        dirs: ['src/shared', 'src/api'],
         dts: './src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,

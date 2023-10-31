@@ -68,7 +68,7 @@ const Lab1: FunctionComponent = () => {
             <h2>{counter}</h2>
             <h1>{total}</h1>
             <ul>
-                {users.map((user, idx) => (
+                {users.length > 0 && users.map((user, idx) => (
                     <li key={idx}>{user['email']}</li>
                 ))}
             </ul>
