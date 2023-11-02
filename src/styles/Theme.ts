@@ -139,7 +139,7 @@ const theme: DefaultTheme = {
     waterloo: '#7c7f8f',
     manatee: '#8b8ea0',
   },
-  textFont: 'Noto Sans',
+  textFont: 'inter',
   breakpoints: sizes,
   spacing: {
     0: '0',

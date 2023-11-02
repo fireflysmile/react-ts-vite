@@ -1,25 +1,60 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "baseUrl": ".",
+    "outDir": "./",
+    "paths": {
+      "src/*": ["src/*"],
+      "i18n/*": ["i18n/*"],
+      "containers/*": ["src/containers/*"],
+      "modals/*": ["src/modals/*"],
+      "types/*": ["src/types/*"],
+      "assets/*": ["assets/*"],
+      "styles/*": ["src/styles/*"],
+      "config/*": ["src/config/*"],
+      "components/*": ["src/components/*"],
+      "api/*": ["src/api/*"],
+      "pages/*": ["src/pages/*"],
+      "stores/*": ["src/stores/*"],
+      "utils/*": ["src/utils/*"],
+      "enums/*": ["src/enums/*"],
+      "hooks/*": ["src/hooks/*"],
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
 }
